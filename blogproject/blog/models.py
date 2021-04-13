@@ -37,6 +37,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
+        ordering = ['-created_time']
 
     #重写save方法,为自动提取文章摘要
     def save(self, *args, **kwargs):
