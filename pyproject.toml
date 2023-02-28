@@ -1,0 +1,44 @@
+[tool.poetry]
+authors = ["mayu08 <mayu08@zuoyebang.com>"]
+description = "ZPad Project Android UI Automation"
+license = "MIT"
+name = "ZPad Project"
+version = "1.30.4"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sloth = {git = "git@git.zuoyebang.cc:mayu08/sloth.git", tag = "1.30.4"}
+django = "^4.1.7"
+
+[tool.poetry.dev-dependencies]
+black = "22.6.0"
+coverage = "6.4.4"
+isort = "5.10.1"
+mypy = "0.971"
+pre-commit = "2.20.0"
+pycln = "2.1.1"
+pylint = "2.15.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[[tool.poetry.source]]
+default = true
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+[tool.pycln]
+all = true
+path = "."
+
+[tool.mypy]
+ignore_missing_imports = true
+
+# https://black.readthedocs.io/en/stable/
+[tool.black]
+line-length = 88
+
+# https://pycqa.github.io/isort/
+[tool.isort]
+profile = "black"
